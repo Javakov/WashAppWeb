@@ -1,0 +1,13 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #003049, #460c0c);
+}
+
+.error {
+    font-size: 64px;
+    color: #ffffff;
+}

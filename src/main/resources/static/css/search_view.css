@@ -1,0 +1,75 @@
+.header-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    box-sizing: border-box;
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+    .header-bar {
+        max-width: 500px;
+    }
+}
+
+.header-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.javakov {
+    color: white;
+    font-size: 24px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.keystore {
+    color: #90e0ef;
+    font-size: 24px;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.playstore-image {
+    max-width: 150px;
+    height: auto;
+    margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+    .playstore-image {
+        max-width: 120px;
+        height: auto;
+    }
+
+    .javakov, .keystore {
+        font-size: 20px;
+    }
+
+    .header-bar {
+        padding: 10px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .playstore-image {
+        max-width: 120px;
+        margin-left: 10px;
+    }
+
+    .javakov, .keystore {
+        font-size: 18px;
+    }
+}

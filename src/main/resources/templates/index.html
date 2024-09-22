@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/fonts.css">
+    <link rel="stylesheet" href="/css/search_view.css">
+    <link rel="stylesheet" href="/css/footer.css">
+    <link rel="stylesheet" href="/css/popup.css">
+    <link rel="icon" href="/icons/favicon.ico">
+    <title>Ремонт бытовой техники в Твери</title>
+</head>
+<body>
+
+<div class="margin">
+    <div class="header-bar">
+        <div class="header-text">
+            <span class="ubuntu-medium javakov">Ремонт бытовой техники</span>
+            <span class="ubuntu-regular keystore">Тверь📌</span>
+        </div>
+        <a href="https://www.rustore.ru/catalog/app/org.javakov.washapp" target="_blank">
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/rustore.png?alt=media&token=e86ab056-a9fe-45b3-b714-3cd2ff49e429"
+                 class="playstore-image" alt="Доступно в RuStore">
+        </a>
+    </div>
+</div>
+
+<div class="cards-container">
+    <div class="container">
+        <div class="card">
+            <div class="card__title ubuntu-medium">
+                <span>Мастер Александр</span>
+            </div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/master.png?alt=media&token=f1c03eb1-c820-42a5-a03b-b7f7a77a15d4"
+                 class="card__image" alt="">
+            <div class="card__price ubuntu-regular">
+                <span>10-летний опыт</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__title ubuntu-medium">
+                <span>Стиральная машина</span>
+            </div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/washcar.png?alt=media&token=9878620d-0871-4a05-893e-d42ae47299ff"
+                 class="card__image" alt="">
+            <div class="card__price ubuntu-regular">
+                <span>от 500₽</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__title ubuntu-medium">
+                <span>Водонагреватель</span>
+            </div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/waterhot.png?alt=media&token=c628e03e-ef4d-4553-a27c-eefe1fab85ee"
+                 class="card__image" alt="">
+            <div class="card__price ubuntu-regular">
+                <span>от 500₽</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card__title ubuntu-medium">
+                <span>Посудомоечная машина</span>
+            </div>
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/dishwasher.jpg?alt=media&token=cf0840e1-73ac-4362-b4a1-4f81b52f4572"
+                 class="card__image" alt="">
+            <div class="card__price ubuntu-regular">
+                <span>от 500₽</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="popup-container" style="display: none;">
+    <div class="popup">
+        <p id="popup-text" class="ubuntu-regular"></p>
+        <a href="#" class="tg-button link ubuntu-medium" onclick="copyToClipboard('+79997893187');">📞Звоните: +7 (999) 789-31-87</a>
+        <a href="https://wa.me/79997893187" class="tg-button link ubuntu-medium" target="_blank">🟢WhatsApp</a>
+        <a href="https://t.me/Mosal63" class="tg-button link ubuntu-medium" target="_blank">▶️Telegram</a>
+        <button id="popup-close" class="close-popup ubuntu-medium">Выбрать другую технику</button>
+    </div>
+</div>
+
+<a class="margin link" href="https://javakov.github.io/me/" target="_blank">
+    <div class="footer ubuntu-regular">© 2024 Javakov</div>
+</a>
+
+<script>
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Номер скопирован: ' + text);
+    }
+</script>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('name');
+
+    if (searchQuery) {
+        document.getElementById('searchInput').value = searchQuery;
+    }
+</script>
+
+<script>
+    const cards = document.querySelectorAll('.card');
+    const popupContainer = document.querySelector('.popup-container');
+    const popupText = document.querySelector('#popup-text');
+    const closeButton = document.querySelector('.close-popup');
+
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.popup') && !event.target.closest('.card')) {
+            popupContainer.style.display = 'none';
+        }
+    });
+
+    cards.forEach((card) => {
+        card.addEventListener('click', () => {
+            const gameName = card.querySelector('.card__title span').textContent;
+            const gamePrice = card.querySelector('.card__price span').textContent;
+
+            if (gameName === 'Мастер Александр') {
+                closeButton.textContent = 'Выбрать технику';
+                popupText.innerHTML = 'Высококвалифицированный мастер Александр\nс 10-летним опытом работы в сфере ремонта бытовой техники\nв Твери и пригороде.\nИмею обширные знания и навыки в диагностике и устранении неисправностей\nразличных марок и моделей бытовых приборов.'
+                popupText.style.lineHeight = '2';
+                popupContainer.style.display = 'flex';
+            } else {
+                closeButton.textContent = 'Выбрать другую технику';
+                popupText.innerHTML = `Вы выбрали <span class="highlight">${gameName}</span>!\nЦена ремонта <span class="highlight">${gamePrice}</span>.`;
+                popupText.style.lineHeight = '2';
+                popupContainer.style.display = 'flex';
+            }
+        });
+    });
+
+    document.querySelector('.close-popup').addEventListener('click', () => {
+        popupContainer.style.display = 'none';
+    });
+</script>
+</body>
+</html>
