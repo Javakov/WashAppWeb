@@ -22,7 +22,7 @@
             <span class="ubuntu-regular keystore">Тверь📌</span>
         </div>
         <a href="https://www.rustore.ru/catalog/app/org.javakov.washapp" target="_blank">
-            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/rustore.png?alt=media&token=e86ab056-a9fe-45b3-b714-3cd2ff49e429"
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/rustore_blue.png?alt=media&token=c53dbbdb-8c9e-424d-84df-df52305d9cca"
                  class="playstore-image" alt="Доступно в RuStore">
         </a>
     </div>
@@ -64,7 +64,7 @@
             <div class="card__title ubuntu-medium">
                 <span>Посудомоечная машина</span>
             </div>
-            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/dishwasher.jpg?alt=media&token=cf0840e1-73ac-4362-b4a1-4f81b52f4572"
+            <img src="https://firebasestorage.googleapis.com/v0/b/wash-app-web.appspot.com/o/dishwasher.png?alt=media&token=e798c1c3-f610-4240-87e4-ed800a554a15"
                  class="card__image" alt="">
             <div class="card__price ubuntu-regular">
                 <span>от 500₽</span>
@@ -76,16 +76,20 @@
 <div class="popup-container" style="display: none;">
     <div class="popup">
         <p id="popup-text" class="ubuntu-regular"></p>
-        <a href="#" class="tg-button link ubuntu-medium" onclick="copyToClipboard('+79997893187');">📞Звоните: +7 (999) 789-31-87</a>
-        <a href="https://wa.me/79997893187" class="tg-button link ubuntu-medium" target="_blank">🟢WhatsApp</a>
-        <a href="https://t.me/Mosal63" class="tg-button link ubuntu-medium" target="_blank">▶️Telegram</a>
-        <button id="popup-close" class="close-popup ubuntu-medium">Выбрать другую технику</button>
+        <div class="button-container">
+            <a href="#" class="tg-button link ubuntu-medium" onclick="copyToClipboard('+79997893187');">📞Звоните: +7 (999) 789-31-87</a>
+            <a href="https://wa.me/79997893187" class="tg-button link ubuntu-medium" target="_blank">🟢WhatsApp</a>
+            <a href="https://t.me/Mosal63" class="tg-button link ubuntu-medium" target="_blank">▶️Telegram</a>
+            <button id="popup-close" class="close-popup ubuntu-medium">Выбрать другую технику</button>
+        </div>
     </div>
 </div>
 
-<a class="margin link" href="https://javakov.github.io/me/" target="_blank">
-    <div class="footer ubuntu-regular">© 2024 Javakov</div>
-</a>
+<div class="footer-container">
+    <a class="margin link" href="https://javakov.github.io/me/" target="_blank">
+        <div class="footer ubuntu-regular">© 2024 Javakov</div>
+    </a>
+</div>
 
 <script>
     function copyToClipboard(text) {
@@ -132,7 +136,7 @@
                 popupContainer.style.display = 'flex';
             } else {
                 closeButton.textContent = 'Выбрать другую технику';
-                popupText.innerHTML = `Вы выбрали <span class="highlight">${gameName}</span>!\nЦена ремонта <span class="highlight">${gamePrice}</span>.`;
+                popupText.innerHTML = `Вы выбрали <span class="highlight">${gameName}</span>.\nЦена ремонта <span class="highlight">${gamePrice}</span>.`;
                 popupText.style.lineHeight = '2';
                 popupContainer.style.display = 'flex';
             }

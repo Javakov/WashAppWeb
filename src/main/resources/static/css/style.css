@@ -59,7 +59,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .card:hover {
-    box-shadow: 0 0 0 4px #90e0ef;
+    box-shadow: 0 0 0 5px #90e0ef;
 }
 
 .card:nth-child(2n + 1) {
@@ -130,19 +130,35 @@ body::-webkit-scrollbar-thumb {
 
 @media (max-width: 768px) {
     .card__title {
-        font-size: 1.7rem;
+        font-size: 1.3rem;
+        bottom: 27px;
+        left: 0;
+        padding: 10px;
     }
 
     .card__price {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        bottom: 16px;
+        left: 0;
+        padding: 10px;
     }
 
     .card:hover .card__title {
-        font-size: 1.7rem;
+        font-size: 1.35rem;
     }
 
     .card:hover .card__price {
-        font-size: 1.6rem;
+        font-size: 1.25rem;
+    }
+
+    .card:nth-child(2n + 1) {
+        grid-row-end: span 2;
+        height: 350px;
+    }
+
+    .card:nth-child(2n) {
+        grid-row-end: span 1;
+        height: 250px;
     }
 }
 
