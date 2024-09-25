@@ -132,12 +132,12 @@
             if (gameName === 'Мастер Александр') {
                 closeButton.textContent = 'Выбрать технику';
                 popupText.innerHTML = 'Высококвалифицированный мастер Александр\nс 10-летним опытом работы в сфере ремонта бытовой техники\nв Твери и пригороде.\nИмею обширные знания и навыки в диагностике и устранении неисправностей\nразличных марок и моделей бытовых приборов.'
-                popupText.style.lineHeight = '2';
+                popupText.style.lineHeight = '1.5';
                 popupContainer.style.display = 'flex';
             } else {
                 closeButton.textContent = 'Выбрать другую технику';
                 popupText.innerHTML = `Вы выбрали <span class="highlight">${gameName}</span>.\nЦена ремонта <span class="highlight">${gamePrice}</span>.`;
-                popupText.style.lineHeight = '2';
+                popupText.style.lineHeight = '1.5';
                 popupContainer.style.display = 'flex';
             }
         });
