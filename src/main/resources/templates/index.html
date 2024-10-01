@@ -94,7 +94,7 @@
     <div class="popup">
         <p id="popup-text" class="ubuntu-regular"></p>
         <div class="button-container">
-            <a href="#" class="phone-button link ubuntu-medium" onclick="copyToClipboard('+79997893187');">Звоните: +7 (999) 789-31-87</a>
+            <a href="tel:+79997893187" class="phone-button link ubuntu-medium">Звоните: +7 (999) 789-31-87</a>
             <a href="https://wa.me/79997893187" class="wa-button link ubuntu-medium" target="_blank">WhatsApp</a>
             <a href="https://t.me/Mosal63" class="tg-button link ubuntu-medium" target="_blank">Telegram</a>
             <button id="popup-close" class="close-popup ubuntu-medium">Выбрать другую технику</button>
@@ -107,18 +107,6 @@
         <div class="footer ubuntu-regular">C 9:00 до 21:00 без выходных<br>Москвичёв А. Г.<br>ИНН: 690300172212<br>+7(999)789-31-87<br>© 2024</div>
     </a>
 </div>
-
-<script>
-    function copyToClipboard(text) {
-        const textarea = document.createElement('textarea');
-        textarea.value = text;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand('copy');
-        document.body.removeChild(textarea);
-        alert('Номер скопирован: ' + text);
-    }
-</script>
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
