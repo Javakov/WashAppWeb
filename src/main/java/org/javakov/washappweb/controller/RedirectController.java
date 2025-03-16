@@ -1,4 +1,4 @@
-package org.javakov.gameskeystore.controller;
+package org.javakov.washappweb.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
