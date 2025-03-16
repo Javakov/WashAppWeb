@@ -149,11 +149,11 @@
 /* Адаптивность */
 @media (max-width: 768px) {
     .reviews-title {
-        font-size: 1.8rem;
+        font-size: 2.1rem;
     }
 
     .reviews-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.7rem;
     }
 
     .review-item {
