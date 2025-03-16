@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository_owner }}/${{ github.event.repository.name }}
 
 jobs:
   build:
@@ -24,6 +24,9 @@ jobs:
         with:
           java-version: '21'
           distribution: 'liberica'
+
+      - name: Convert repository name to lowercase
+        run: echo "REPO_LOWER=$(echo ${{ github.repository }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
 
       - name: Log into registry ${{ env.REGISTRY }}
         if: github.event_name != 'pull_request'
@@ -40,15 +43,15 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          images: ${{ env.REGISTRY }}/${{ env.REPO_LOWER }}
 
       - name: Build a container image from our Spring Boot app using Paketo.io / Cloud Native Build Packs
-        run: ./gradlew bootBuildImage --imageName=$IMAGE_NAME
+        run: ./gradlew bootBuildImage --imageName=${{ env.REPO_LOWER }}
 
       - name: Tag & publish to GitHub Container Registry
         if: github.event_name != 'pull_request'
         run: |
           while IFS= read -r tag; do
-            docker tag $IMAGE_NAME $tag
+            docker tag ${{ env.REPO_LOWER }} $tag
             docker push $tag
           done <<< "${{ steps.meta.outputs.tags }}"
