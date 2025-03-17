@@ -9,12 +9,15 @@ import org.springframework.stereotype.Service;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
+import org.springframework.scheduling.annotation.Async;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
 public class ReviewServiceImpl implements ReviewService {
     private final DatabaseReference databaseRef;
 
+    @Async
     public CompletableFuture<String> addReview(String name, String text) {
         Map<String, Object> review = new HashMap<>();
         review.put("name", name);
@@ -32,6 +35,7 @@ public class ReviewServiceImpl implements ReviewService {
         });
     }
 
+    @Async
     public CompletableFuture<Map<String, Map<String, Object>>> getReviews() {
         CompletableFuture<Map<String, Map<String, Object>>> future = new CompletableFuture<>();
 
