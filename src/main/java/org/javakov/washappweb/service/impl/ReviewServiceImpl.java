@@ -6,6 +6,7 @@ import org.javakov.washappweb.service.ReviewService;
 import com.google.firebase.database.*;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.CompletableFuture;
 
@@ -22,7 +23,9 @@ public class ReviewServiceImpl implements ReviewService {
         Map<String, Object> review = new HashMap<>();
         review.put("name", name);
         review.put("text", text);
-        review.put("timestamp", System.currentTimeMillis());
+
+        String formattedDate = formatDate(System.currentTimeMillis());
+        review.put("timestamp", formattedDate);
 
         DatabaseReference newReviewRef = databaseRef.child("reviews").push();
         return CompletableFuture.supplyAsync(() -> {
@@ -64,5 +67,10 @@ public class ReviewServiceImpl implements ReviewService {
         });
 
         return future;
+    }
+
+    private String formatDate(long timestamp) {
+        SimpleDateFormat sdf = new SimpleDateFormat("EEE, dd MMM yyyy г., HH:mm", Locale.forLanguageTag("ru"));
+        return sdf.format(new Date(timestamp));
     }
 }

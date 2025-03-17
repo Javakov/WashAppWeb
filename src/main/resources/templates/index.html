@@ -281,15 +281,7 @@
             date.style.fontSize = '13px';
             date.style.color = '#999';
 
-            date.innerText = new Date(review.timestamp).toLocaleString('ru-RU', {
-                weekday: 'short',
-                year: 'numeric',
-                month: 'short',
-                day: 'numeric',
-                hour: '2-digit',
-                minute: '2-digit',
-                hour12: false,
-            });
+            date.innerText = review.timestamp;
 
             reviewItem.appendChild(author);
             reviewItem.appendChild(text);
