@@ -19,21 +19,31 @@
 <body>
 
 <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-        m[i].l=1*new Date();
-        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
-        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+<script type="text/javascript">
+    (function (m, e, t, r, i, k, a) {
+        m[i] = m[i] || function () {
+            (m[i].a = m[i].a || []).push(arguments)
+        };
+        m[i].l = 1 * new Date();
+        for (var j = 0; j < document.scripts.length; j++) {
+            if (document.scripts[j].src === r) {
+                return;
+            }
+        }
+        k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+    })
     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
     ym(98485538, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
+        clickmap: true,
+        trackLinks: true,
+        accurateTrackBounce: true,
+        webvisor: true
     });
 </script>
-<noscript><div><img src="https://mc.yandex.ru/watch/98485538" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<noscript>
+    <div><img src="https://mc.yandex.ru/watch/98485538" style="position:absolute; left:-9999px;" alt=""/></div>
+</noscript>
 <!-- /Yandex.Metrika counter -->
 
 <div class="margin">
@@ -47,6 +57,12 @@
                  class="playstore-image" alt="Доступно в RuStore">
         </a>
     </div>
+</div>
+
+<div class="contact-buttons-container">
+    <a href="tel:+79997893187" class="phone-button ubuntu-medium">Позвонить +7 (999) 789-31-87</a>
+    <a href="https://wa.me/79997893187" class="wa-button ubuntu-medium" target="_blank">Написать в WhatsApp</a>
+    <a href="https://t.me/Mosal63" class="tg-button ubuntu-medium" target="_blank">Написать в Telegram</a>
 </div>
 
 <div class="cards-container">
@@ -106,7 +122,8 @@
                 <textarea class="mdl-textfield__input ubuntu-regular" rows="1" id="review" required></textarea>
                 <label class="mdl-textfield__label ubuntu-medium" for="review">Ваш отзыв</label>
             </div>
-            <button type="submit" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect submit-btn ubuntu-medium">
+            <button type="submit"
+                    class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect submit-btn ubuntu-medium">
                 Отправить отзыв
             </button>
         </form>
@@ -122,9 +139,9 @@
     <div class="popup">
         <p id="popup-text" class="ubuntu-regular"></p>
         <div class="button-container">
-            <a href="tel:+79997893187" class="phone-button ubuntu-medium">Звоните: +7 (999) 789-31-87</a>
-            <a href="https://wa.me/79997893187" class="wa-button ubuntu-medium" target="_blank">WhatsApp</a>
-            <a href="https://t.me/Mosal63" class="tg-button ubuntu-medium" target="_blank">Telegram</a>
+            <a href="tel:+79997893187" class="phone-button ubuntu-medium">Позвонить +7 (999) 789-31-87</a>
+            <a href="https://wa.me/79997893187" class="wa-button ubuntu-medium" target="_blank">Написать в WhatsApp</a>
+            <a href="https://t.me/Mosal63" class="tg-button ubuntu-medium" target="_blank">Написать в Telegram</a>
             <button id="popup-close" class="close-popup ubuntu-medium">Выбрать другую технику</button>
         </div>
     </div>

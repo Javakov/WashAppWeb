@@ -36,7 +36,6 @@ body::-webkit-scrollbar-thumb {
     position: relative;
     width: 100%;
     max-width: 1200px;
-    padding-top: 80px;
     margin: 0 auto;
     z-index: 0;
 }
