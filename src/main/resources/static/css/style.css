@@ -119,6 +119,16 @@ body::-webkit-scrollbar-thumb {
     transition: color 0.3s, font-size 0.3s;
 }
 
+.card__gif {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    pointer-events: none;
+}
+
 .card:hover .card__title,
 .card:hover .card__price {
     color: #90e0ef;
